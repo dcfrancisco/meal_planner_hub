@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:meal_planner_hub/widgets/my_home_page.dart';
+
+import 'pages/login_page.dart';
+import 'pages/my_home_page.dart';
 
 class MealPlannerApp extends StatelessWidget {
   const MealPlannerApp({super.key});
@@ -8,12 +10,15 @@ class MealPlannerApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Flutter Demo',
+      title: 'MealPlannerHub',
       theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-        useMaterial3: true,
+        primarySwatch: Colors.green,
       ),
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
+      initialRoute: '/',
+      routes: {
+        '/': (context) => const LoginPage(),
+        '/home': (context) => const MyHomePage(title: 'MealPlannerHub'),
+      },
     );
   }
 }
